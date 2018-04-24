@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1400.sch"
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.sch"
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <Ingest_LDD 
 	xmlns="http://pds.nasa.gov/pds4/pds/v1" 
@@ -102,22 +102,6 @@
 			<pattern>[1-9]/[0-9]{9}(.[0-9]{3})?</pattern>
 		</DD_Value_Domain>
 	</DD_Attribute>  
-	
-	<DD_Attribute>
-		<name>standard_data_product_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>sample.standard_data_product_id</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>PPI</submitter_name>
-		<definition>The standard_data_product_id keyword is used to identify
-		data products of the same processing level that
-		are not otherwise indentified by being in different
-		collections within the bundle.</definition>    
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>       
        
 	<!-- Instrument LDD Attributes --> 
 
@@ -203,12 +187,6 @@
 		</DD_Association>
 		<DD_Association>
 			<local_identifier>sample.spacecraft_clock_stop_count</local_identifier>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<local_identifier>sample.standard_data_product_id</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
