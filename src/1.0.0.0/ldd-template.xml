@@ -174,19 +174,19 @@
 		
 		<!-- Attributes -->
 		<DD_Association>
-			<local_identifier>sample.mission_phase_name</local_identifier>
+			<identifier_reference>sample.mission_phase_name</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<local_identifier>sample.spacecraft_clock_start_count</local_identifier>
+			<identifier_reference>sample.spacecraft_clock_start_count</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<local_identifier>sample.spacecraft_clock_stop_count</local_identifier>
+			<identifier_reference>sample.spacecraft_clock_stop_count</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -194,7 +194,7 @@
 
 		<!-- Component (class) definition -->
 		<DD_Association>
-			<local_identifier>sample.inst</local_identifier>
+			<identifier_reference>sample.inst</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
