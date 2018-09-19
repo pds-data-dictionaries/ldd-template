@@ -27,7 +27,8 @@ The {Template} dictionary contains classes that describe a fictious mission. It 
 6. Generate XML Schema and Schematron files.
 	- In the "src" folder, run the [lddtool](https://pds.nasa.gov/pds4/software/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/)
 	- Copy the generated files to the "build/IM version/LDD version" folder.
-
+7. Generate documentation
+        - In the "src" directory use the "pds-ldd-doc" tool in the [pds4-tools] package to generate documentation.
 
 ## Versions
 
