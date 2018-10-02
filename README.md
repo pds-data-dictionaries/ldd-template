@@ -30,7 +30,7 @@ The {Template} dictionary contains classes that describe a fictious mission. It 
 7. Generate documentation
 	- In the "src" directory use the "pds-ldd-doc" tool in the [pds4-tools] package to generate documentation.
 
-## Versions
+## Versions (Source)
 
 - [1.0.0.0](src/1.0.0.0)
 
@@ -42,11 +42,19 @@ The build process insures compatiblity of the LDD with the core information mode
 This LDD has been built for the following versions of the PDS4 information model.
 
 - [1.9.0.0](build/1.9.0.0)
-	- Package: [v1.9.0.0](https://github.com/nasa-pds/ldd-wave/releases/tag/v1.9.0.0)
+   - [1.0.0.0](src/1.0.0.0) (Download: 
+      [XMLSchema (XSD)](https://github.com/nasa-pds/ldd-template/raw/master/build/1.9.0.0/1.0.0.0/PDS4_MESS_1900_1000.xsd)
+      | [Schematron (SCH)](https://github.com/nasa-pds/ldd-template/raw/master/build/1.9.0.0/1.0.0.0/PDS4_MESS_1900_1000.sch)
+      )
+
 	
 ## Notes
 
-Each build is generating using the [lddtool](https://pds.nasa.gov/pds4/software/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/).
+Each build is generating using the [lddtool](https://pds.nasa.gov/pds4/software/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/). The build command used is:
+
+```
+lddtool -lp ldd-file.xml
+```
 
 Documentation included in the source (src) directory is generated using the "pds-ldd-doc" tool in the [pds4-tools](https://github.com/nasa-pds/pds4-tools) package.
 
