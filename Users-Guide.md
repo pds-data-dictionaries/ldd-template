@@ -1,6 +1,6 @@
 # PDS4 Local Data Dictionary User’s Guide Outline
-April 23, 2019  
-S. Slavney
+{date}  
+{author}
 
 > Note to authors who use this outline: The outline is a
 > suggestion only. It includes the minimum of content needed to inform the
