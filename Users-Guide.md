@@ -1,4 +1,4 @@
-# PDS4 Discipline Data Dictionary User’s Guide Outline
+# PDS4 Local Data Dictionary User’s Guide Outline
 April 23, 2019  
 S. Slavney
 
@@ -12,14 +12,14 @@ S. Slavney
    1. Audience
    1. Applicable Documents
 
-# Overview of the {name} Discipline Data Dictionary
+# Overview of the {name} Local Data Dictionary
 
 *What is this dictionary for? What kinds of products might
 use this dictionary? Who is the steward of this dictionary (person and node
 name)? How often is it updated? To whom should questions about it be directed?
 (Give an email address or link to a page with contact information.)*
 
-# How to Include the {name} Dictionary in a PDS4 Label
+# How to Include the {name} Local Data Dictionary in a PDS4 Label
 
 *Briefly explain the form that a discipline dictionary
 takes: the input ingest file, the output schema, Schematron, and other files,
