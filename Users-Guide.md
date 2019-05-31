@@ -1,4 +1,4 @@
-# PDS4 Local Data Dictionary User’s Guide Outline
+# PDS4 {name} Local Data Dictionary User’s Guide
 {date}  
 {author}
 
