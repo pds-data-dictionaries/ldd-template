@@ -1,14 +1,14 @@
-# PDS4 {name} Local Data Dictionary User’s Guide
+# PDS4 {name} Local Data Dictionary Userâ€™s Guide
 {date}  
 {author}
 
 > Note to authors who use this outline: The outline is a
 > suggestion only. It includes the minimum of content needed to inform the
 > dictionary user. Authors are expected to tailor the outline to their particular
-> purposes, elaborating and providing context as needed.*
+> purposes, elaborating and providing context as needed.
 
 # Introduction
-   1. Purpose of this User’s Guide
+   1. Purpose of this Userâ€™s Guide
    1. Audience
    1. Applicable Documents
 
@@ -49,9 +49,9 @@ on the PDS Small Bodies Node wiki. In this example the names of classes and attr
 their definitions further down the page, a useful lookup tool.*
 
 *The author should take into consideration the complexity
-of the dictionary when organizing this section.  If the hierarchy is large or
+of the dictionary when organizing this section.Â  If the hierarchy is large or
 complicated, it may be helpful to break it down by class as shown in the
-following subsections, but don’t forget to provide a high-level view of how the
+following subsections, but donâ€™t forget to provide a high-level view of how the
 classes relate to one another.*
 
 ## Class 1
