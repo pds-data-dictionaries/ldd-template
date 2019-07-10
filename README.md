@@ -1,6 +1,6 @@
 # {Template} Local Data Dictionary (LDD)
 
-The {Template} dictionary contains classes that describe a fictious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
+The {Template} dictionary contains classes that describe a fictitious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
 
 1. Remove the ".git" folder to detach the closed files from the git repository.
 	- If creating a new git repository, follow instructions provided by the git host for initializing a new repository. For a repository on github this would be:
