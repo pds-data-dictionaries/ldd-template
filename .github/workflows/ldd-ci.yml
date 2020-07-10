@@ -66,7 +66,7 @@ jobs:
       - name: Generate Dictionaries
         run: |
           echo "+++ Cleanup development versions if they exist"
-          git rm -fr $DEPLOY_DIR/*; mkdir -p $DEPLOY_DIR; cd $DEPLOY_DIR;
+          git rm -fr $DEPLOY_DIR; mkdir -p $DEPLOY_DIR; cd $DEPLOY_DIR;
 
           echo "+++ Generate dictionaries"
           dependencies_dir=$GITHUB_WORKSPACE/src/dependencies
