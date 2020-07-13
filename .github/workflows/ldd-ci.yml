@@ -107,6 +107,7 @@ jobs:
             #sed -i "s/\[IM_VERSION_ALPHA\]/$IM_VERSION_ALPHA/g" $REG_TEST_DIR/*.xml
             #sed -i "s/\[SCHEMA_LOCATION\]/$xsd/g" $REG_TEST_DIR/*.xml
 
+            DEPLOY_DIR=$DEPLOY_DIR/$GITHUB_SHA
             /tmp/validate-$VALIDATE_VERSION/bin/validate --skip-content-validation -R pds4.label -x $DEPLOY_DIR/*.xsd /tmp/*.xsd -S $DEPLOY_DIR/*.sch /tmp/*.sch -t $REG_TEST_DIR/*VALID*.xml
 
             # Run tests expected invalid
