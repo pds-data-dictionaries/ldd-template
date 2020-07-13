@@ -66,10 +66,10 @@ jobs:
       - name: Generate Dictionaries
         run: |
           echo "+++ Cleanup development versions if they exist"
-          rm -fr $DEPLOY_DIR
-          
+          rm -fr $DEPLOY_DIR;
           DEPLOY_DIR=$DEPLOY_DIR/$(date +"%Y%m%d%H%M%S")
-          mkdir -p $DEPLOY_DIR; cd $DEPLOY_DIR;
+          mkdir -p $DEPLOY_DIR;
+          cd $DEPLOY_DIR;
 
           echo "+++ Generate dictionaries"
           dependencies_dir=$GITHUB_WORKSPACE/src/dependencies
@@ -87,6 +87,7 @@ jobs:
           wget --directory-prefix=/tmp https://github.com/NASA-PDS/validate/releases/download/v$VALIDATE_VERSION/validate-${VALIDATE_VERSION}-bin.tar.gz
           tar -xf /tmp/validate-${VALIDATE_VERSION}-bin.tar.gz -C /tmp/
 
+          DEPLOY_DIR=$DEPLOY_DIR/$(date +"%Y%m%d%H%M%S")
           /tmp/validate-$VALIDATE_VERSION/bin/validate --skip-content-validation -R pds4.label -x $DEPLOY_DIR/*.xsd -S $DEPLOY_DIR/*.sch -t $DEPLOY_DIR/*.xml
 
       - name: Complete Regression Tests (if applicable)
