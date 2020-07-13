@@ -64,7 +64,8 @@ jobs:
           echo $GITHUB_WORKSPACE
 
       - name: Generate Dictionaries
-        run: |          echo "+++ Cleanup development versions if they exist"
+        run: |
+          echo "+++ Cleanup development versions if they exist"
           rm -fr $DEPLOY_DIR
           DEPLOY_DIR=$DEPLOY_DIR/$GITHUB_SHA
           mkdir -p $DEPLOY_DIR
