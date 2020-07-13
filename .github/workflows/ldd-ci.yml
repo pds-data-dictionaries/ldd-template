@@ -64,10 +64,9 @@ jobs:
           echo $GITHUB_WORKSPACE
 
       - name: Generate Dictionaries
-        run: |
-          echo "+++ Cleanup development versions if they exist"
+        run: |          echo "+++ Cleanup development versions if they exist"
           rm -fr $DEPLOY_DIR
-          DEPLOY_DIR=$DEPLOY_DIR/$(date +"%Y%m%d%H%M%S")
+          DEPLOY_DIR=$DEPLOY_DIR/$GITHUB_SHA
           mkdir -p $DEPLOY_DIR
           cd $DEPLOY_DIR
 
@@ -87,7 +86,7 @@ jobs:
           wget --directory-prefix=/tmp https://github.com/NASA-PDS/validate/releases/download/v$VALIDATE_VERSION/validate-${VALIDATE_VERSION}-bin.tar.gz
           tar -xf /tmp/validate-${VALIDATE_VERSION}-bin.tar.gz -C /tmp/
 
-          DEPLOY_DIR=$DEPLOY_DIR/$(date +"%Y%m%d%H%M%S")
+          DEPLOY_DIR=$DEPLOY_DIR/$GITHUB_SHA
           /tmp/validate-$VALIDATE_VERSION/bin/validate --skip-content-validation -R pds4.label -x $DEPLOY_DIR/*.xsd -S $DEPLOY_DIR/*.sch -t $DEPLOY_DIR/*.xml
 
       - name: Complete Regression Tests (if applicable)
@@ -95,8 +94,8 @@ jobs:
           if [ -d "$REG_TEST_DIR" ]; then
 
             # Get the PDS core dictionaries
-            wget --directory-prefix=/tmp "https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_$IM_VERSION_ALPHA.xsd"
-            wget --directory-prefix=/tmp "https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_$IM_VERSION_ALPHA.sch"
+            wget -q --directory-prefix=/tmp "https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_$IM_VERSION_ALPHA.xsd"
+            wget -q --directory-prefix=/tmp "https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_$IM_VERSION_ALPHA.sch"
 
             # Find schema filename
             #xsd="file:\/\/$(find $DEPLOY_DIR/*.xsd | head -1 | sed 's/\//\\\//g')"
