@@ -6,15 +6,18 @@ A properly formed git commit subject line should always be able to complete the 
     If applied, this commit will <your subject line here>
 ----- REMOVE -----
 
-**Summary***
+## Summary
+
 Brief summary of changes if not sufficiently described by commit messages.
 
-**Test Data and/or Report**
+## Test Data and/or Report
+
 One of the following should be included here:
 * Reference to regression test included in code (preferred wherever reasonable)
 * Attach test data here + outputs of tests
 
-**Related Issues**
-Reference related issues here and use `Fixes` or `Resolves` for closing issues:
-* for issues in this repo: #1, #2, #3
-* for issues in other repos: NASA-PDS/my_repo#1, NASA-PDS/her_repo#2
+## Related Issues
+
+Reference related issues here and use `Fixes` or `Resolves` for closing issues, for example:
+* Refs pds-data-dictionaries/PDS4-LDD-Issue-Repo#13 will include a link between this PR and that issue
+* Resolves pds-data-dictionaries/PDS4-LDD-Issue-Repo#13 will actually close the ticket once this PR is merged
