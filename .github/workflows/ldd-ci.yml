@@ -22,7 +22,6 @@ env:
   REGRESSION_TEST_DIR: ${{ format('{0}/{1}/', github.workspace, 'test') }}
   # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
   DEPLOY_DIR: ${{ format('{0}/{1}/{2}', github.workspace, 'build/development', github.sha) }}
-  # DEPLOY_DIR: ${{ format('{0}/{1}/', 'build/development', '8aab5f03e121d6be648377efc943edb0e71d49d4') }}
 
 jobs:
   build:
@@ -54,5 +53,4 @@ jobs:
           git commit -m "Auto-generated dictionaries from Github Actions"
           git config --global push.default current
           git push
-
 
