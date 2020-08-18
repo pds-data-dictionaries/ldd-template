@@ -3,7 +3,7 @@
 
 ---
 
-name: Generate LDDs
+name: Generate LDD
 
 on:
    push:
