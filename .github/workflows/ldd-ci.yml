@@ -3,12 +3,13 @@
 
 ---
 
-name: Continuous Integration and Deployment
+name: Generate LDDs
 
 on:
    push:
      branches:
        - '*'
+       # - '!master'
      paths:
        - 'src/*.xml'
        - '.github/workflows/*.yml'
@@ -16,31 +17,42 @@ on:
 env:
   IM_VERSION: '1.14.0.0'
   IM_VERSION_SHORT: '1E00'
+  # Historical IM Version Variables Here
   PDS_SCHEMA_URL: 'https://pds.nasa.gov/pds4/pds/v1/'
   REGRESSION_TEST_DIR: ${{ format('{0}/{1}/', github.workspace, 'test') }}
   # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
-  DEPLOY_DIR: ${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build/development', github.sha, '1.14.0.0') }}
+  DEPLOY_DIR: ${{ format('{0}/{1}/{2}', github.workspace, 'build/development', github.sha) }}
   # DEPLOY_DIR: ${{ format('{0}/{1}/', 'build/development', '8aab5f03e121d6be648377efc943edb0e71d49d4') }}
 
 jobs:
   build:
-    # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
-    name: 'LDD Build - v1.14.0.0'
+    name: 'LDD Build'
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Generate LDDs and Validate
-        uses: NASA-PDS/gh-action-pds4-ldd@master
+      - name: Generate v${{env.IM_VERSION}} LDDs
+        uses: jordanpadams/gh-action-pds4-ldd@master
         with:
-          datapath: ${{ env.DEPLOY_DIR }}
+          datapath: ${{ format('{0}/{1}', env.DEPLOY_DIR, env.IM_VERSION) }}
           pds4_im_version: ${{ env.IM_VERSION }}
           pds4_im_short_version: ${{ env.IM_VERSION_SHORT }}
-          schemas: ${{ format('{0}/{1}', env.DEPLOY_DIR, '*.xsd') }}
-          schematrons: ${{ format('{0}/{1}', env.DEPLOY_DIR, '*.sch') }}
+          schemas: ${{ format('{0}/{1}/{2}', env.DEPLOY_DIR, env.IM_VERSION, '*.xsd') }}
+          schematrons: ${{ format('{0}/{1}/{2}', env.DEPLOY_DIR, env.IM_VERSION, '*.sch') }}
           pds_schema_url: ${{ env.PDS_SCHEMA_URL }}
           test_dir: ${{ env.REGRESSION_TEST_DIR }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Historical IM Version LDD Generation Here
+
+      - name: Push LDDs to Github
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config --local github.token ${{ secrets.GITHUB_TOKEN }}
+          git add ${{ env.DEPLOY_DIR }}
+          git commit -m "Auto-generated dictionaries from Github Actions"
+          git config --global push.default current
+          git push
 
 
