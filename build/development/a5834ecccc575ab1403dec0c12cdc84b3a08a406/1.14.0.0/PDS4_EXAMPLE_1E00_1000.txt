@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        10.1.0
+   LDDTool Version        11.3.2
    LDD Version Id:        1.0.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Aug 25 00:02:33 UTC 2020
-   Common Schema          [PDS4_PDS_1D00.xsd]
-   Common Schematron      [PDS4_PDS_1D00.sch]
-   IM Version Id:         1.13.0.0
+   Time                   Tue Aug 25 00:06:38 UTC 2020
+   Common Schema          [PDS4_PDS_1E00.xsd]
+   Common Schematron      [PDS4_PDS_1E00.sch]
+   IM Version Id:         1.14.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.19
+   IM Label Version Id:   1.20
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -33,10 +33,12 @@ Summary:
    Attributes             1
    Associations           1
    Error messages         0
-   Warning messages       0
+   Warning messages       2
    Information messages   0
 
 Detailed validation messages
+   WARNING  Header:  - New steward has been specified:janedoe
+   WARNING  Header:  - New namespace id has been specified:example
 
 Parsed Input - Header:
    LDD Name               Example LDD
@@ -51,7 +53,7 @@ Parsed Input - Header:
 Parsed Input - Attributes:
 
    name                   my_first_attribute
-   version                1.13
+   version                1.14
    value data type        ASCII_Integer
    description            My first attribute 
 
