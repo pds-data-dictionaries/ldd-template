@@ -106,7 +106,7 @@ jobs:
         run: |
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
-          git config --local github.token ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          git config --local github.token ${{ secrets.GITHUB_TOKEN }}
           git add -A $(dirname ${{ env.DEPLOY_PATH }})
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
           git config --global push.default current
