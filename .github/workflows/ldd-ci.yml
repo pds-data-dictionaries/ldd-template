@@ -51,7 +51,7 @@ jobs:
 
       - name: Update submodules for dependencies
         run: |
-          git submodule update --init --recursive
+          git submodule update --init --force --remote
 
       - name: Generate LDDs
         id: generate
