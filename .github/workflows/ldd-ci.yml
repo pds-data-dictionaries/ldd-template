@@ -8,7 +8,7 @@ on:
    push:
      branches:
        - '*'
-#        - '!master'
+       - '!master'
      paths:
       - 'src/*.xml'
       - '.github/workflows/*.yml'
