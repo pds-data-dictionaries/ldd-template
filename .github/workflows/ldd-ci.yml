@@ -10,9 +10,9 @@ on:
      branches:
        - '*'
 #        - '!master'
-#      paths:
-#       - 'src/*.xml'
-#       - '.github/workflows/*.yml'
+     paths:
+      - 'src/*.xml'
+      - '.github/workflows/*.yml'
 
 env:
   REGRESSION_TEST_PATH: ${{ format('{0}/{1}/', github.workspace, 'test') }}
@@ -113,8 +113,12 @@ jobs:
           git config --local github.token ${{ secrets.ADMIN_GITHUB_TOKEN }}
           git add -A $(dirname ${{ env.DEPLOY_PATH }})
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
-          git config --global push.default current
-          git push
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          branch: master
 
     needs: build
 
