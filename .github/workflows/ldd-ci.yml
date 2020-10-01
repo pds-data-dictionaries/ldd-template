@@ -122,7 +122,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-          branch: ${{ env.GITHUB_REF }}
+          branch: ${{ github.ref }}
 
     needs: build
 
