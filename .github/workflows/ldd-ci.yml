@@ -2,7 +2,6 @@
 # For more information see: https://github.com/actions/setup-java#apache-maven-with-a-settings-path
 ---
 name: LDD Automation with PDSEN CI Bot
-
 on:
    push:
      branches:
@@ -16,6 +15,7 @@ env:
   REGRESSION_TEST_PATH: ${{ format('{0}/{1}/', github.workspace, 'test') }}
   # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
   LOGS_PATH: ${{ format('{0}/{1}', github.workspace, 'logs') }}
+  DEPLOY_PATH: ${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build', 'development', github.sha) }}
 
 jobs:
   build: # job 1
@@ -25,34 +25,17 @@ jobs:
 
     strategy:
       matrix:
-        # pds4_version: [ '1.14.0.0', '1.15.0.0' ]
-        pds4_version: [ '1.14.0.0' ]
-        # Example of how to specify multiple versions
-        # pds4_version: [ '1.13.0.0', '1.14.0.0' ]
+        pds4_version: [ '1.14.0.0', '1.15.0.0' ]
 
-        include:
+        # include:
           # Example of including older version with LDDTool dev version
-          - pds4_version: '1.14.0.0'
-            lddtool_development_release: True
-
-          # Example of include for development release of IM
-          - pds4_version: '1.15.0.0'
-            lddtool_development_release: True
+          # - pds4_version: '1.14.0.0'
+          #   lddtool_development_release: True
 
     steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-
-      - name: Initialize workflow variables
-        id: vars
-        shell: bash
-        run: |
-          if [[ "${{github.ref}}" == *"release"* ]]; then
-            echo "DEPLOY_PATH=${{github.workspace}}/build/release" >> $GITHUB_ENV
-          else
-            echo "DEPLOY_PATH=${{github.workspace}}/build/development/${{github.sha}}"  >> $GITHUB_ENV
-          fi
 
       - name: Set up Python 3
         uses: actions/setup-python@v1
@@ -117,7 +100,7 @@ jobs:
         shell: bash
         run: |
           if [[ "${{github.ref}}" == *"release"* ]]; then
-            echo "DEPLOY_PATH=${{github.workspace}}/build/development/${{github.sha}}" >> $GITHUB_ENV
+            echo "DEPLOY_PATH=${{github.workspace}}/build/release" >> $GITHUB_ENV
             rm -fr ${{github.workspace}}/build/development
           fi
 
