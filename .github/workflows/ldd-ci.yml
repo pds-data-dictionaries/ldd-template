@@ -95,14 +95,10 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R /tmp/artifacts
 
-      - name: Initialize workflow variables and cleanup
-        id: vars
-        shell: bash
+      - name: Clean previous dev/snapshot tags
         run: |
-          if [[ "${{github.ref}}" == *"release"* ]]; then
-            echo "DEPLOY_PATH=${{github.workspace}}/build/release" >> $GITHUB_ENV
-            rm -fr ${{github.workspace}}/build/development
-          fi
+          git fetch --prune --unshallow --tags
+          git tag -l | grep 'dev' | xargs -t -I arg sh -c 'git tag -d arg;git push --delete origin arg;'
 
       - name: Move the LDDs to their new home
         run: |
@@ -112,18 +108,16 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
 
-      - name: Clean previous dev/snapshot tags
+      - name: If Release Branch, move to release dir
+        shell: bash
         run: |
-          git fetch --prune --unshallow --tags
-          git tag -l | grep 'dev' | xargs -t -I arg sh -c 'git tag -d arg;git push --delete origin arg;'
-
-      - name: Publish new dev release
-        run: |
-           pip install pds-github-util
-           ldd-release --ingest_ldd_src_dir ${{github.workspace}}/src --ldd_output_path ${{ env.DEPLOY_PATH }} --token ${{ secrets.ADMIN_GITHUB_TOKEN }} --dev
+          if [[ "${{github.ref}}" == *"release"* ]]; then
+            echo "DEPLOY_PATH=${{github.workspace}}/build/release" >> $GITHUB_ENV
+            cp -R ${{ env.DEPLOY_PATH }}/* ${{github.workspace}}/build/release/
+          fi
 
       - name: Push LDDs to Github
-        run: |
+        run: |  
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
           git add -A $(dirname ${{ env.DEPLOY_PATH }})
