@@ -15,17 +15,34 @@ env:
   DEPLOY_PATH: ${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build', 'development', github.sha) }}
 
 jobs:
+  get_versions:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: set-matrix
+        run: |
+          while read -r line; do
+              if [[ ! -z "$line" ]]; then
+                  versions=$versions'"'$line'"',
+              fi
+          done < $GITHUB_WORKSPACE/pds4_versions.txt
+          
+          versions="[${versions::-1}]"
+          echo "::set-output name=matrix::{\"pds4_version\": $versions}"
+
   build: # job 1
     name: 'LDD Build'
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
 
     strategy:
-      matrix:
-        pds4_version: [ '1.14.0.0', '1.15.0.0' ]
+      matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
         # include:
-          # Example of including older version with LDDTool dev version
+          # Example of using LDDTool dev version for in development builds
           # - pds4_version: '1.14.0.0'
           #   lddtool_development_release: True
 
