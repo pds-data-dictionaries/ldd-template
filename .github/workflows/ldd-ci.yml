@@ -37,13 +37,13 @@ jobs:
           echo "{\"pds4_version\":${versions}}"
           echo "::set-output name=matrix::{\"pds4_version\": $versions}"
 
-  build: # job 1
+  build:
     name: 'LDD Build'
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
 
     strategy:
-      matrix: ${{fromJson(needs.job1.outputs.matrix)}}
+      matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
         # include:
           # Example of using LDDTool dev version for in development builds
