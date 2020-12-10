@@ -39,6 +39,7 @@ jobs:
 
   build:
     name: 'LDD Build'
+    needs: get_versions
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
 
