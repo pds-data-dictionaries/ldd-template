@@ -5,7 +5,7 @@ name: LDD Automation with PDSEN CI Bot
 on:
    push:
      branches:
-       - '*'
+       - '**'
        - '!master'
 
 env:
@@ -132,7 +132,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
 
-      - name: If Release Branch, move to release dir
+      - name: if release Branch, move to release dir
         shell: bash
         run: |
           if [[ "${{github.ref}}" == *"release"* ]]; then
