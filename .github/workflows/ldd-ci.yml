@@ -36,7 +36,12 @@ jobs:
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
           # echo "::set-output name=matrix::{\"pds4_version\": $versions}"
+          
+          # Example of using development PDS4 Release for v1.16.0.0
           echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":true}]}"
+          
+          # Example of using latest unstable LDDTool Release
+          # echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"lddtool_development_release\":true}]}"
 
   build:
     name: 'LDD Build'
@@ -46,9 +51,6 @@ jobs:
 
     strategy:
       matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
-
-#         include:
-#           pds4_development_release: True
 
     steps:
       - uses: actions/checkout@v2
