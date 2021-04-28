@@ -35,7 +35,8 @@ jobs:
           done < $GITHUB_WORKSPACE/pds4_versions.txt
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
-          echo "::set-output name=matrix::{\"pds4_version\": $versions}"
+          # echo "::set-output name=matrix::{\"pds4_version\": $versions}"
+          echo "::set-output name=matrix::{\"pds4_version\": $versions, \"pds4_development_release\": True}"
 
   build:
     name: 'LDD Build'
@@ -46,10 +47,8 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
-        include:
-          # Example of using LDDTool dev version for in development builds
-          # - lddtool_development_release: True
-          - pds4_development_release: True
+#         include:
+#           pds4_development_release: True
 
     steps:
       - uses: actions/checkout@v2
