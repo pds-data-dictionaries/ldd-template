@@ -2,9 +2,11 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.15.0.0" ,
-      "Date": "Fri Jan 08 23:32:36 UTC 2021" ,
+      "IM Version": "1.15.0.0" ,
+      "LDD Version": "1.0.0.0" ,
+      "Date": "Wed Apr 28 20:50:53 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "namespaces": ["pds:", "example:"] ,
       "classDictionary": [
         {
           "class": {
