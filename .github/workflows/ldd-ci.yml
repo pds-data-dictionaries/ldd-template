@@ -36,7 +36,7 @@ jobs:
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
           # echo "::set-output name=matrix::{\"pds4_version\": $versions}"
-          echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":\"True\"}]}"
+          echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":True}]}"
 
   build:
     name: 'LDD Build'
@@ -63,6 +63,9 @@ jobs:
       - name: Update submodules for dependencies
         run: |
           git submodule update --init --force --remote
+          
+          echo ${{ matrix.pds4_version }}
+          echo ${{ matrix.pds4_development_release }}
 
       - name: Generate LDDs
         id: generate
