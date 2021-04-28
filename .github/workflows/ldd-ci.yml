@@ -48,8 +48,8 @@ jobs:
 
         include:
           # Example of using LDDTool dev version for in development builds
+          # - lddtool_development_release: True
           - pds4_development_release: True
-            # lddtool_development_release: True
 
     steps:
       - uses: actions/checkout@v2
