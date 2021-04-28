@@ -36,7 +36,7 @@ jobs:
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
           # echo "::set-output name=matrix::{\"pds4_version\": $versions}"
-          echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":True}]}"
+          echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":true}]}"
 
   build:
     name: 'LDD Build'
