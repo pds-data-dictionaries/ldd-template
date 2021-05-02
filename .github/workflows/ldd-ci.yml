@@ -52,11 +52,6 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
-        include:
-          # Example of using LDDTool dev version for in development builds
-          - pds4_development_release: True
-            # lddtool_development_release: True
-
     steps:
       - uses: actions/checkout@v2
         with:
