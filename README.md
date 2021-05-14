@@ -33,7 +33,7 @@ Each build is auto-generated using Github Actions, PDS4 LDDTool, and Validate To
 
 You can manually run [LDDTool](https://nasa-pds.github.io/pds4-information-model/model-lddtool/index.html) on the IngestLDD using the following command:
 ```
-lddtool -lpsnJ src/MY_IngestLDD.xml
+lddtool -lpsnJ MY_IngestLDD.xml
 ```
 
 # Contribute
