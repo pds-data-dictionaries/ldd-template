@@ -135,6 +135,9 @@ jobs:
           
       - name: Move the execution logs to their new home
         run: |
+          if [ -d ${{ env.LOGS_PATH }} ]; then
+            git rm -r ${{ env.LOGS_PATH }}
+          fi
           mkdir -p ${{ env.LOGS_PATH }}
           cp -R /tmp/artifacts/*logs ${{ env.LOGS_PATH }}/
 
@@ -155,11 +158,6 @@ jobs:
           git config --local user.name "PDSEN CI Bot"
           git add -A $(dirname ${{ env.DEPLOY_PATH }}) ${{ env.LOGS_PATH }}
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          git push origin HEAD
 
     needs: build
