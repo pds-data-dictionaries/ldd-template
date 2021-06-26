@@ -70,7 +70,7 @@ jobs:
 
       - name: Generate LDDs
         id: generate
-        uses: NASA-PDS/gh-action-pds4-ldd@master
+        uses: NASA-PDS/gh-action-pds4-ldd@main
         with:
           data_path: ${{ format('{0}/{1}', env.DEPLOY_PATH, matrix.pds4_version) }}
           pds4_im_version: ${{ matrix.pds4_version }}
@@ -148,7 +148,7 @@ jobs:
         run: |  
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
-          git add -A $(dirname ${{ env.DEPLOY_PATH }})
+          git add -A $(dirname ${{ env.DEPLOY_PATH }}) ${{ env.LOGS_PATH }}
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
           
       - name: Push changes
