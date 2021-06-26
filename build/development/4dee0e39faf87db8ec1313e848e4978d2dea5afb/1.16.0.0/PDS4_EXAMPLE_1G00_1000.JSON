@@ -2,9 +2,11 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.15.0.0" ,
-      "Date": "Fri Jan 08 23:32:36 UTC 2021" ,
+      "IM Version": "1.16.0.0" ,
+      "LDD Version": "1.0.0.0" ,
+      "Date": "Sat Jun 26 18:18:29 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "namespaces": ["pds:", "example:"] ,
       "classDictionary": [
         {
           "class": {
@@ -46,7 +48,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "example" ,
             "steward": "janedoe" ,
-            "versionId": "1.15" ,
+            "versionId": "1.16" ,
             "description": "My first attribute " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
