@@ -132,6 +132,11 @@ jobs:
         run: |
           mkdir -p ${{ env.DEPLOY_PATH }}
           cp -R /tmp/artifacts/*LDDs/* ${{ env.DEPLOY_PATH }}
+          
+      - name: Move the execution logs to their new home
+        run: |
+          mkdir -p ${{ env.LOGS_PATH }}
+          cp -R /tmp/artifacts/*logs ${{ env.LOGS_PATH }}/
 
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
