@@ -135,9 +135,7 @@ jobs:
           
       - name: Move the execution logs to their new home
         run: |
-          if [ -d ${{ env.LOGS_PATH }} ]; then
-            git rm -r ${{ env.LOGS_PATH }}
-          fi
+          rm -fr ${{ env.LOGS_PATH }}
           mkdir -p ${{ env.LOGS_PATH }}
           cp -R /tmp/artifacts/*logs ${{ env.LOGS_PATH }}/
 
