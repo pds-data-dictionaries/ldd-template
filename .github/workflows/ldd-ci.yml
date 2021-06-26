@@ -150,7 +150,7 @@ jobs:
           git config --local user.name "PDSEN CI Bot"
           git add -A $(dirname ${{ env.DEPLOY_PATH }}) ${{ env.LOGS_PATH }}
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
-          
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
@@ -158,4 +158,3 @@ jobs:
           branch: ${{ github.ref }}
 
     needs: build
-
