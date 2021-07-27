@@ -80,6 +80,10 @@ jobs:
           logs_path: ${{ env.LOGS_PATH }}
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
+      - name: Check logs
+        run: |
+          ls -R ${{ env.LOGS_PATH }}
+
       - name: Upload LDDs to Github Action Artifacts
         uses: actions/upload-artifact@v1
         with:
