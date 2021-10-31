@@ -155,7 +155,6 @@ jobs:
       - name: Display structure of downloaded files
         run: |
           ls -R /tmp/artifacts
-          ls -R ${{github.workspace}}/build/release/
 
       - name: Clean previous dev/snapshot tags
         run: |
@@ -165,11 +164,9 @@ jobs:
       - name: Clean out old LDDs and logs
         run: |
           path=$(dirname ${{ env.DEPLOY_PATH }})
-          echo rm -fr $path/*
           rm -fr $path/*
 
           path=${{ env.LOGS_PATH }}
-          echo rm -fr $path/*
           rm -fr $path/*
 
       - name: Move the LDDs to their new home
