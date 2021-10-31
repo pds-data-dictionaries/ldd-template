@@ -1,12 +1,6 @@
 # {LDD Name} Local Data Dictionary (LDD)
 
-The {LDD Name} dictionary [enter description here]
-
-LDD Steward: [enter steward node here]
-
 ## Releases
-
-![LDD Automation with PDSEN CI Bot](https://github.com/pds-data-dictionaries/ldd-template/workflows/LDD%20Automation%20with%20PDSEN%20CI%20Bot/badge.svg) [TODO - replace with this repo badge]
 
 * **Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
 * **Unstable Release** (the latest working, unstable build) - See the `build/development` 
