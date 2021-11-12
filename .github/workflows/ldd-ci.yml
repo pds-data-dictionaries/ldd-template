@@ -203,3 +203,7 @@ jobs:
           git commit -m "Auto-generated LDD by PDSEN CI Bot"
           git push origin HEAD
 
+  generation-success: # job 3
+    name: 'Success if after pdsen-ci post'
+    runs-on: ubuntu-latest
+    if: ${{ success() && github.actor == 'pdsen-ci' }}
