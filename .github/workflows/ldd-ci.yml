@@ -204,7 +204,7 @@ jobs:
           git push origin HEAD
 
   generation-success: # job 3
-    name: 'Success if after pdsen-ci post'
+    name: 'LDD Generation Check'
     runs-on: ubuntu-latest
     if: ${{ success() && github.actor == 'pdsen-ci' }}
 
