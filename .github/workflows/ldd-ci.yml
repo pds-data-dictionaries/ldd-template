@@ -207,3 +207,8 @@ jobs:
     name: 'Success if after pdsen-ci post'
     runs-on: ubuntu-latest
     if: ${{ success() && github.actor == 'pdsen-ci' }}
+
+    steps:
+      - name: SUCCESS
+        run: |
+          echo SUCCESS
