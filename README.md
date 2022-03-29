@@ -1,41 +1,30 @@
-# {LDD Name} Local Data Dictionary (LDD)
+# <My_LDD_Name> <Discipline_or_Local> Namespace
+<!-- UPDATE NEEDED - short summary of what this namespace is. approx 100-256 characters. update steward information -->
 
-## Releases
+The <My_LDD_Name> <Discipline_or_Local> Namespace does x, y, z.
 
-* **Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
-* **Unstable Release** (the latest working, unstable build) - See the `build/development` 
+Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
 
 # Documentation
 
-* **User Guide:** TBD
-* **Other PDS Data Dictionaries Documentation:** https://pds-data-dictionaries.github.io/
-
-## Propose Updates
-
-See the [LDD Update Process](https://pds-data-dictionaries.github.io/development/ldd-update.html)
-
-## Implement
-
-To implement changes the LDD, simply update the IngestLDD under the `src/` directory, commit to a branch, push the branch to Github, and create a Pull Request. The [Github Action CI/CD](https://pds-data-dictionaries.github.io/development/ldd-build.html) will take care of the auto-generation of the schemas and schematrons.
-
-For more information see the [LDD Build Process](https://pds-data-dictionaries.github.io/development/ldd-build.html)
-
-## Notes
-
-Each build is auto-generated using Github Actions, PDS4 LDDTool, and Validate Tool.
+* [User Guide](docs/user-guide.md)
+* [Detailed Documentation](docs)
+* [Other PDS Namespace Documentation](https://pds-data-dictionaries.github.io/)
 
 
-You can manually run [LDDTool](https://nasa-pds.github.io/pds4-information-model/model-lddtool/index.html) on the IngestLDD using the following command:
-```
-lddtool -lpsnJ MY_IngestLDD.xml
-```
+# Latest Release
+
+<!-- UPDATE NEEDED - the URL to have #namespace-id, e.g. #disp, #geom, etc. -->
+* [PDS Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
+* [GitHub](../../../releases/latest)
+* [Change log](CHANGELOG.md)
 
 
-# Contribute
+# Feedback
 
 Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
 
 
-# Support
+# Developer Support
 
-See the [PDS Data Dictionaries Support page](https://pds-data-dictionaries.github.io/support/contribute.html) for more Support information.
+[For more information](src/README.md)
