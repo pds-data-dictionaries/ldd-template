@@ -1,6 +1,7 @@
 # <My_LDD_Name> <Discipline_or_Local> Namespace
+<!-- short summary of what this namespace is. approx 100-256 characters -->
 
-The <My_LDD_Name> <Discipline_or_Local> Namespace _short summary of what this namespace is. approx 100-256 characters_
+The <My_LDD_Name> <Discipline_or_Local> Namespace does x, y, z.
 
 Steward: [<steward-name>, <node-id> Node](@<username>)
 
@@ -15,7 +16,7 @@ Steward: [<steward-name>, <node-id> Node](@<username>)
 
 * [PDS Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
 * [GitHub](../../../releases/latest)
-* Change log [CHANGELOG.md](CHANGELOG.md)
+* [Change log](CHANGELOG.md)
 
 
 # Feedback
