@@ -1,7 +1,7 @@
-# <My_LDD_Name> <Discipline_or_Local> Namespace
+# <My_NS_Name (prefix)> <Discipline|Local> Namespace
 <!-- UPDATE NEEDED - short summary of what this namespace is. approx 100-256 characters. update steward information -->
 
-The <My_LDD_Name> <Discipline_or_Local> Namespace does x, y, z.
+The <My_NS_Name (prefix)> <Discipline/Local> Namespace does x, y, z.
 
 Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
 
