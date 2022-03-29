@@ -1,9 +1,9 @@
 # <My_LDD_Name> <Discipline_or_Local> Namespace
-<!-- short summary of what this namespace is. approx 100-256 characters -->
+<!-- UPDATE NEEDED - short summary of what this namespace is. approx 100-256 characters. update steward information -->
 
 The <My_LDD_Name> <Discipline_or_Local> Namespace does x, y, z.
 
-Steward: [<steward-name>, <node-id> Node](@<username>)
+Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
 
 # Documentation
 
@@ -14,6 +14,7 @@ Steward: [<steward-name>, <node-id> Node](@<username>)
 
 # Latest Release
 
+<!-- UPDATE NEEDED - the URL to have #namespace-id, e.g. #disp, #geom, etc. -->
 * [PDS Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
 * [GitHub](../../../releases/latest)
 * [Change log](CHANGELOG.md)
