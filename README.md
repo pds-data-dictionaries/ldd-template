@@ -13,8 +13,8 @@ Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
 
 # Latest Release
 
-<!-- UPDATE NEEDED - the URL to have #namespace-id, e.g. #disp, #geom, etc. -->
-* [PDS Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
+<!-- UPDATE NEEDED - Replace <PDS Namespace> with namespace name and modify the URL to have #namespace-id at the end, e.g. #disp, #geom, etc. -->
+* [&lt;PDS Namespace&gt;](https://pds.nasa.gov/datastandards/dictionaries/#disp)
 * [GitHub](../../../releases/latest)
 * [Change log](CHANGELOG.md)
 
