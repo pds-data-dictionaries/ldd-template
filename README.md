@@ -7,9 +7,8 @@ Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
 
 # Documentation
 
-* [User Guide](docs/user-guide.md)
-* [Detailed Documentation](docs)
-* [Other PDS Namespace Documentation](https://pds-data-dictionaries.github.io/)
+* [User Guide](docs/user-guide.md) <!-- General information for using this namespace in PDS4 product labels. -->
+* [Detailed Documentation](docs) <!-- Detailed information about all attributes available in the namespace, validation constraints, design notes, etc. -->
 
 
 # Latest Release
@@ -27,4 +26,4 @@ Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://githu
 
 # Developer Support
 
-[For more information](src/README.md)
+* [PDS Namespace Developer Documentation](https://pds-data-dictionaries.github.io/) 
