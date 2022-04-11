@@ -1,4 +1,3 @@
-# PDS4 {name} Local Data Dictionary User’s Guide
 {date}  
 {author}
 
@@ -7,19 +6,19 @@
 > dictionary user. Authors are expected to tailor the outline to their particular
 > purposes, elaborating and providing context as needed.
 
-## Introduction
+# Introduction
    1. Purpose of this User’s Guide
    1. Audience
    1. Applicable Documents
 
-## Overview of the {name} Local Data Dictionary
+# Overview of the {name} Local Data Dictionary
 
 *What is this dictionary for? What kinds of products might
 use this dictionary? Who is the steward of this dictionary (person and node
 name)? How often is it updated? To whom should questions about it be directed?
 (Give an email address or link to a page with contact information.)*
 
-## How to Include the {name} Local Data Dictionary in a PDS4 Label
+# How to Include the {name} Local Data Dictionary in a PDS4 Label
 
 *Briefly explain the form that a discipline dictionary
 takes: the input ingest file, the output schema, Schematron, and other files,
@@ -39,7 +38,7 @@ tag. Collapse the lower level classes if needed for brevity.*
 consistent indentation. Color-coding is helpful. Label snippets copied from an
 Oxygen editor window will retain their color-coding when pasted here.*
 
-## Organization of Classes and Attributes
+# Organization of Classes and Attributes
 
 *Give a schematic diagram or a list showing the hierarchy of
 classes in order of appearance in label. Refer the reader to the Definitions
@@ -54,7 +53,7 @@ complicated, it may be helpful to break it down by class as shown in the
 following subsections, but don’t forget to provide a high-level view of how the
 classes relate to one another.*
 
-### Class 1
+## Class 1
 
 *What is this class for?*
 
@@ -68,11 +67,11 @@ as appropriate. Refer reader to Examples section for complete examples.*
 
 *List and explain any rules that apply to this class (e.g. from Schematron).*
 
-### Class 2
+## Class 2
 
 [repeat this subsection for each class]
 
-## Definitions
+# Definitions
 
 *Give an alphabetical list of all classes and attributes
 with complete definitions. (Useful ones, not silly ones like "The
@@ -89,7 +88,7 @@ map_projection_name attribute provides the name of the map projection.")*
 - *Minimum and maximum number of characters, if applicable*
 - *List of valid values, if applicable.*
 
-## Examples
+# Examples
 
 *Give one or more examples of label snippets for real products, annotated as appropriate. 
 Make sure the examples can be successfully validated using the latest version of the PDS4 

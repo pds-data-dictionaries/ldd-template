@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'PDS Data Dictionaries'
-copyright = '2021 California Institute of Technology'
+project = 'PDS Example Namespace'
+copyright = 'No Copyright Applied'
 author = 'NASA Planetary Data System'
 
 
@@ -36,12 +36,12 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.autosectionlabel',
     'sphinx_rtd_theme',
-    'sphinxemoji.sphinxemoji'
+    'sphinxemoji.sphinxemoji',
+    'myst_parser'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-extensions = ['myst_parser']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

@@ -3,17 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-This is the documentation for a namespace (LDD)
+Example Namespace Documentation
 ===================================
 
 Here is some introductory text
 
-Contents
---------
 
 .. toctree::
-    :glob:
     :maxdepth: 3
     :caption: User Guide
 
-    user-guide
+    user/user-guide
+
+
+.. toctree::
+    :maxdepth: 3
+    :caption: Detailed Documentation
+
+    detailed/display-settings
+    detailed/local-internal-reference
+    detailed/display-direction
+    detailed/color-display-settings
+    detailed/movie-display-settings
