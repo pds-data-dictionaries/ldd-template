@@ -13,9 +13,13 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 github:
-	@make checklinks html
+	@make clean checklinks html
 	@find .. -mindepth 1 -maxdepth 1 -type d -not -name "*git*" -not -name "*docs" -exec rm -fr {} \;
 	@cp -a build/html/. ..
+
+cleaner:
+	@make clean
+	@find .. -mindepth 1 -maxdepth 1 -type d -not -name "*git*" -not -name "*docs" -exec rm -fr {} \;
 
 .PHONY: help Makefile checklinks
 
