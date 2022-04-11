@@ -16,6 +16,7 @@ jobs:
   build: # job 1
     name: 'Build Docs'
     runs-on: ubuntu-latest
+    environment: github-pages
     #if: github.actor != 'pdsen-ci'
 
     steps:
