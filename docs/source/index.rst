@@ -12,6 +12,8 @@ Contents
 --------
 
 .. toctree::
+    :glob:
+    :maxdepth: 3
+    :caption: User Guide
 
     user-guide
-    overview
