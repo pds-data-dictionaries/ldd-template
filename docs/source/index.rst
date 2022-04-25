@@ -6,8 +6,7 @@
 Example Namespace Documentation
 ===================================
 
-Here is some introductory text
-
+.. include:: intro.md
 
 .. toctree::
     :maxdepth: 3
