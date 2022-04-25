@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'PDS Example Namespace'
-copyright = 'No Copyright Applied'
+copyright = 'This is a work of the U.S. Government and is not subject to copyright protection in the United States. Foreign copyrights may apply.'
 author = 'NASA Planetary Data System'
 
 
