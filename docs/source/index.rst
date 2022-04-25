@@ -19,8 +19,4 @@ Example Namespace Documentation
     :maxdepth: 3
     :caption: Detailed Documentation
 
-    detailed/display-settings
-    detailed/local-internal-reference
-    detailed/display-direction
-    detailed/color-display-settings
-    detailed/movie-display-settings
+    detailed/example
