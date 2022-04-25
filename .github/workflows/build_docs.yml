@@ -8,17 +8,15 @@ on:
    push:
      branches:
        - 'main'
-       - 'mdrum-github-pages'
      paths:
        - 'docs/source/**'
-       - '.github/workflows/*.yml'
 
 jobs:
   build: # job 1
     name: 'Build Docs'
     runs-on: ubuntu-latest
     environment: github-pages
-    #if: github.actor != 'pdsen-ci'
+    if: github.actor != 'pdsen-ci'
 
     steps:
       - uses: actions/checkout@v2
