@@ -1,1 +1,1 @@
-This where you would put the description of the namespace
+Short abstract for the namespace should go here
