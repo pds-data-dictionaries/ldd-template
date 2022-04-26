@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'PDS Example Namespace'
+project = 'Example Namespace'
 # copyright = overidden by CSS specified below
 author = 'NASA Planetary Data System'
 
