@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.23
->>  INFO Date: Mon Apr 25 17:20:29 UTC 2022
+>>  INFO Date: Tue Apr 26 04:46:25 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
@@ -25,7 +25,7 @@ Input:
      - IM Version: true
      - Export JSON Flag: true
 
-     - Ingest LDD(s): /home/runner/work/ldd-template/ldd-template/src/PDS4_EXAMPLE_IngestLDD.xml
+     - Ingest LDD(s): /home/runner/work/template/template/src/PDS4_EXAMPLE_IngestLDD.xml
 
 Output:
 
