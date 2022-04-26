@@ -43,3 +43,6 @@ pom.xml.versionsBackup
 *.javac
 .gwt/
 target/
+
+# Sphinx stuff
+docs/build/

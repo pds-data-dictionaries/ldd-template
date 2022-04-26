@@ -1,4 +1,3 @@
-# PDS4 {name} Local Data Dictionary User’s Guide
 {date}  
 {author}
 
