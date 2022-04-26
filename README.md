@@ -3,7 +3,7 @@
 
 The <My_NS_Name (prefix)> <Discipline/Local> Namespace does x, y, z.
 
-Steward: [add-steward-name-here, add-node-id-here Node](@<username>)
+Steward: [add-steward-name-here, add-node-id-here Node](mailto:steward@example.com)
 
 
 # Documentation
