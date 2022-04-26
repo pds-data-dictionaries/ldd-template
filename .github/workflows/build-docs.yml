@@ -33,9 +33,6 @@ jobs:
           # Install Sphinx
           pip install -r requirements.txt
 
-          # Install dependencies for PDF generation
-          apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-
       - name: Make Sphinx
         id: make
         run: |
@@ -43,9 +40,6 @@ jobs:
 
           # Make the HTML docs and copy to main
           make github
-
-          # Make the PDF docs and copy to main
-          make github-pdf 
 
           cd ..
 
