@@ -9,7 +9,7 @@ on:
      branches:
        - 'main'
      paths:
-       - 'docs/source/**'
+       - 'docs/**'
 
 jobs:
   build: # job 1
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           # Install Sphinx
-          pip install -r requirements.txt
+          pip install -r docs/requirements.txt
 
       - name: Make Sphinx
         id: make
@@ -76,7 +76,7 @@ jobs:
       - name: Install dependencies
         run: |
           # Install Sphinx
-          pip install -r requirements.txt
+          pip install -r docs/requirements.txt
 
           # Install dependencies for PDF generation
           sudo apt install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
