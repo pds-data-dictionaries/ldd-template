@@ -16,7 +16,7 @@ See this namespace's online documentation at https://pds-data-dictionaries.githu
 
 <!-- UPDATE NEEDED - Replace <PDS Namespace> with namespace name and modify the URL to have #namespace-id at the end, e.g. #disp, #geom, etc. -->
 * [&lt;PDS Namespace&gt;](https://pds.nasa.gov/datastandards/dictionaries/#disp)
-* [GitHub](../../../releases/latest)
+* [GitHub](../../releases/latest)
 * [Change log](CHANGELOG.md)
 
 # Using This Repository
