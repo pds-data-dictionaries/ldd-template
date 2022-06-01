@@ -1,7 +1,7 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java#apache-maven-with-a-settings-path
 ---
-name: LDD Automation with PDSEN CI Bot
+name: PDS4 Sub-Model Automation
 on:
    push:
      branches:
@@ -16,7 +16,7 @@ env:
 
 jobs:
   get_versions:
-    name: Get Applicable PDS4 Versions
+    name: Get Latest 2 PDS4 Versions
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
     outputs:
@@ -29,11 +29,15 @@ jobs:
 
       - id: set-matrix
         run: |
+          # Remove blank links from file
+          sed '/^$/d' $GITHUB_WORKSPACE/pds4_versions.txt | tail -2 > subset_pds4_versions.txt
+
+          # Look through lines and pull out the versions
           while read -r line; do
               if [[ ! -z "$line" ]]; then
                   versions=$versions'"'$line'"',
               fi
-          done < $GITHUB_WORKSPACE/pds4_versions.txt
+          done < subset_pds4_versions.txt
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
           
@@ -41,7 +45,7 @@ jobs:
           echo "::set-output name=matrix::{\"pds4_version\": $versions}"
 
   build:
-    name: 'LDD Build'
+    name: 'Generate and Validate'
     needs: get_versions
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
@@ -58,15 +62,15 @@ jobs:
       - name: Set up Python 3
         uses: actions/setup-python@v1
         with:
-          python-version: '3.7'
+          python-version: '3.9'
 
       - name: Update submodules for dependencies
         run: |
           git submodule update --init --force --remote
 
-      - name: Generate LDDs
+      - name: Generate Sub-Models
         id: generate
-        uses: NASA-PDS/gh-action-pds4-ldd@main
+        uses: NASA-PDS/sumo-gen-action@main
         with:
           data_path: ${{ format('{0}/{1}', env.DEPLOY_PATH, matrix.pds4_version) }}
           pds4_im_version: ${{ matrix.pds4_version }}
@@ -80,10 +84,10 @@ jobs:
         run: |
           ls -R ${{ env.LOGS_PATH }}
 
-      - name: Upload LDDs to Github Action Artifacts
+      - name: Upload Sub-Models to Github Action Artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: v${{matrix.pds4_version}}_LDDs
+          name: v${{matrix.pds4_version}}_SuMos
           path: ${{ env.DEPLOY_PATH }}
         if: ${{ always() }}
 
@@ -132,12 +136,12 @@ jobs:
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
           git add -A ${{ env.LOGS_PATH }}
-          git commit -m "Add logs from failed LDD generation"
+          git commit -m "Add logs from failed SuMo generation"
           git push origin HEAD
 
 
   upload_all: # job 3
-    name: 'Add LDDs and Logs to Github'
+    name: 'Add SuMos and Logs to Github'
     runs-on: ubuntu-latest
     needs: build
     if: ${{ github.actor != 'pdsen-ci' }}
@@ -161,7 +165,7 @@ jobs:
           git fetch --prune --unshallow --tags
           git tag -l | grep 'dev' | xargs -t -I arg sh -c 'git tag -d arg;git push --delete origin arg;'
 
-      - name: Clean out old LDDs and logs
+      - name: Clean out old SuMos and logs
         run: |
           path=$(dirname ${{ env.DEPLOY_PATH }})
           rm -fr $path/*
@@ -169,11 +173,11 @@ jobs:
           path=${{ env.LOGS_PATH }}
           rm -fr $path/*
 
-      - name: Move the LDDs to their new home
+      - name: Move the SuMos to their new home
         run: |
           mkdir -p ${{ env.DEPLOY_PATH }}
-          ls -R /tmp/artifacts/*LDDs/*
-          rsync -av /tmp/artifacts/*LDDs/* ${{ env.DEPLOY_PATH }}
+          ls -R /tmp/artifacts/*SuMos/*
+          rsync -av /tmp/artifacts/*SuMos/* ${{ env.DEPLOY_PATH }}
 
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
@@ -182,7 +186,7 @@ jobs:
         shell: bash
         run: |
           if [[ "${{github.ref}}" == *"release"* ]]; then
-            rsync -av /tmp/artifacts/*LDDs/* ${{github.workspace}}/build/release/
+            rsync -av /tmp/artifacts/*SuMos/* ${{github.workspace}}/build/release/
             ls -R ${{github.workspace}}/build/release/
           fi
 
@@ -195,11 +199,11 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R ${{ env.LOGS_PATH }}
 
-      - name: Push LDDs and Logs to Github
+      - name: Push SuMos and Logs to Github
         run: |
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
           git add -A $(dirname ${{ env.DEPLOY_PATH }}) ${{ env.LOGS_PATH }} ${{github.workspace}}/build/release/
-          git commit -m "Auto-generated LDD by PDSEN CI Bot"
+          git commit -m "Auto-generated Sub-Model by PDSEN CI Bot"
           git push origin HEAD
 
