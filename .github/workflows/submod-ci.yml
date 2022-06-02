@@ -40,7 +40,7 @@ jobs:
           done < subset_pds4_versions.txt
           versions="[${versions::-1}]"
           echo "{\"pds4_version\":${versions}}"
-          
+
           # Baseline: Set pds4 version to versions from file
           echo "::set-output name=matrix::{\"pds4_version\": $versions}"
 
@@ -87,7 +87,7 @@ jobs:
       - name: Upload Sub-Models to Github Action Artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: v${{matrix.pds4_version}}_SuMos
+          name: v${{matrix.pds4_version}}_SubMods
           path: ${{ env.DEPLOY_PATH }}
         if: ${{ always() }}
 
@@ -116,7 +116,7 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R /tmp/artifacts
-          
+
       - name: Clean out old logs
         run: |
           path=$(dirname ${{ env.LOGS_PATH }})
@@ -132,7 +132,7 @@ jobs:
         run: ls -R ${{ env.LOGS_PATH }}
 
       - name: Push logs to Github
-        run: |  
+        run: |
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
           git add -A ${{ env.LOGS_PATH }}
@@ -141,7 +141,7 @@ jobs:
 
 
   upload_all: # job 3
-    name: 'Add SuMos and Logs to Github'
+    name: 'Add SubMods and Logs to Github'
     runs-on: ubuntu-latest
     needs: build
     if: ${{ github.actor != 'pdsen-ci' }}
@@ -165,7 +165,7 @@ jobs:
           git fetch --prune --unshallow --tags
           git tag -l | grep 'dev' | xargs -t -I arg sh -c 'git tag -d arg;git push --delete origin arg;'
 
-      - name: Clean out old SuMos and logs
+      - name: Clean out old SubMods and logs
         run: |
           path=$(dirname ${{ env.DEPLOY_PATH }})
           rm -fr $path/*
@@ -173,11 +173,11 @@ jobs:
           path=${{ env.LOGS_PATH }}
           rm -fr $path/*
 
-      - name: Move the SuMos to their new home
+      - name: Move the SubMods to their new home
         run: |
           mkdir -p ${{ env.DEPLOY_PATH }}
-          ls -R /tmp/artifacts/*SuMos/*
-          rsync -av /tmp/artifacts/*SuMos/* ${{ env.DEPLOY_PATH }}
+          ls -R /tmp/artifacts/*SubMods/*
+          rsync -av /tmp/artifacts/*SubMods/* ${{ env.DEPLOY_PATH }}
 
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
@@ -186,7 +186,7 @@ jobs:
         shell: bash
         run: |
           if [[ "${{github.ref}}" == *"release"* ]]; then
-            rsync -av /tmp/artifacts/*SuMos/* ${{github.workspace}}/build/release/
+            rsync -av /tmp/artifacts/*SubMods/* ${{github.workspace}}/build/release/
             ls -R ${{github.workspace}}/build/release/
           fi
 
@@ -199,7 +199,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R ${{ env.LOGS_PATH }}
 
-      - name: Push SuMos and Logs to Github
+      - name: Push SubMods and Logs to Github
         run: |
           git config --local user.email "pdsen-ci@jpl.nasa.gov"
           git config --local user.name "PDSEN CI Bot"
