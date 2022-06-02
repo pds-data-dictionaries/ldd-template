@@ -16,8 +16,8 @@
   </Identification_Area>
   <Observation_Area>
     <Time_Coordinates>
-      <start_date_time xsi:nil="true" nilReason="inapplicable"/>
-      <stop_date_time xsi:nil="true" nilReason="inapplicable"/>
+      <start_date_time>2020Z</start_date_time>
+      <stop_date_time>2022Z</stop_date_time>
     </Time_Coordinates>
     
     <Investigation_Area>
