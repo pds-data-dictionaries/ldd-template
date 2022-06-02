@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMATRONS IN LABEL. THEY WILL BE ADDED VIA COMMAND-LINE -->
+<!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMATRONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
 
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
   xmlns:example="http://pds.nasa.gov/pds4/example/v1"  
   xmlns:pds="http://pds.nasa.gov/pds4/pds/v1" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMALOCATIONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
 
   <Identification_Area>
     <logical_identifier>urn:nasa:pds:bundle:collection:product</logical_identifier>
@@ -16,8 +18,8 @@
   </Identification_Area>
   <Observation_Area>
     <Time_Coordinates>
-      <start_date_time>2020Z</start_date_time>
-      <stop_date_time>2022Z</stop_date_time>
+      <start_date_time>2020-01-01T00:00:00Z</start_date_time>
+      <stop_date_time>2022-01-01T00:00:00Z</stop_date_time>
     </Time_Coordinates>
     
     <Investigation_Area>
