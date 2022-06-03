@@ -16,7 +16,7 @@ env:
 
 jobs:
   get_versions:
-    name: Get Latest 2 PDS4 Versions
+    name: Get 4 Latest PDS4 Versions
     runs-on: ubuntu-latest
     if: github.actor != 'pdsen-ci'
     outputs:
