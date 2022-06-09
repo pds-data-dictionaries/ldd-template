@@ -77,12 +77,6 @@ jobs:
           logs_path: ${{ env.LOGS_PATH }}
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
-      - name: Create symlink
-        run: |
-          path=${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build', 'development', 'snapshot') }}
-          rm -f $path
-          ln -s ${{ env.DEPLOY_PATH }} $path
-
       - name: Check logs
         run: |
           ls -R ${{ env.LOGS_PATH }}
@@ -181,6 +175,12 @@ jobs:
           mkdir -p ${{ env.DEPLOY_PATH }}
           ls -R /tmp/artifacts/*SubMods/*
           rsync -av /tmp/artifacts/*SubMods/* ${{ env.DEPLOY_PATH }}
+          
+      - name: Create symlink
+        run: |
+          path=${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build', 'development', 'snapshot') }}
+          rm -f $path
+          ln -s ${{ env.DEPLOY_PATH }} $path
 
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DEPLOY_PATH }}
