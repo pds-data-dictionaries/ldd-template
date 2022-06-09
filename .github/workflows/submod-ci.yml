@@ -79,8 +79,9 @@ jobs:
 
       - name: Create symlink
         run: |
-          rm -f ${{ format('{0}/{1}/{2}', github.workspace, 'build', 'development') }}
-          ln -s ${{ env.DEPLOY_PATH }} ${{ format('{0}/{1}/{2}', github.workspace, 'build', 'development', 'snapshot') }}
+          path=${{ format('{0}/{1}/{2}', github.workspace, 'build', 'development', 'snapshot') }}
+          rm -f $path
+          ln -s ${{ env.DEPLOY_PATH }} $path
 
       - name: Check logs
         run: |
