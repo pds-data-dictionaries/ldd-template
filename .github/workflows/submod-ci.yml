@@ -77,6 +77,11 @@ jobs:
           logs_path: ${{ env.LOGS_PATH }}
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
+      - name: Create symlink
+        run: |
+          rm -f ${{ format('{0}/{1}/{2}', github.workspace, 'build', 'development' }}
+          ln -s ${{ env.DEPLOY_PATH }} ${{ format('{0}/{1}/{2}', github.workspace, 'build', 'development', 'snapshot' }}
+
       - name: Check logs
         run: |
           ls -R ${{ env.LOGS_PATH }}
