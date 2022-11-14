@@ -18,6 +18,7 @@ env:
   LOGS_PATH: ${{ format('{0}/{1}', github.workspace, 'logs') }}
   DEPLOY_PATH: ${{ format('{0}/{1}/{2}/{3}', github.workspace, 'build', 'development', github.sha) }}
 
+
 jobs:
   get_versions:
     name: Get PDS4 Versions
