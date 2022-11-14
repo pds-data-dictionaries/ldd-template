@@ -8,6 +8,10 @@ on:
        - '**'
        - '!main'
 
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   REGRESSION_TEST_PATH: ${{ format('{0}/{1}/', github.workspace, 'test') }}
   # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
