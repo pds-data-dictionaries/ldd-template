@@ -44,7 +44,6 @@ jobs:
 
           # Baseline: Set pds4 version to versions from file
           echo "matrix={\"pds4_version\": $versions}{name}={value}" >> $GITHUB_OUTPUT
-          #echo "::set-output name=matrix::{\"pds4_version\": $versions}"
 
   build:
     name: 'Generate and Validate'
