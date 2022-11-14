@@ -8,6 +8,10 @@ on:
        - '**'
        - '!main'
 
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   REGRESSION_TEST_PATH: ${{ format('{0}/{1}/', github.workspace, 'test') }}
   # TODO - Have to hard-code this for now since Actions don't yet allow the use of env here.
@@ -22,7 +26,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
           ssh-key: ${{ secrets.SSH_KEY }}
@@ -39,7 +43,7 @@ jobs:
           echo "{\"pds4_version\":${versions}}"
 
           # Baseline: Set pds4 version to versions from file
-          echo "::set-output name=matrix::{\"pds4_version\": $versions}"
+          echo "matrix={\"pds4_version\": $versions}" >> $GITHUB_OUTPUT
 
   build:
     name: 'Generate and Validate'
@@ -51,13 +55,13 @@ jobs:
       matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
       - name: Set up Python 3
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
@@ -82,14 +86,14 @@ jobs:
           ls -R ${{ env.LOGS_PATH }}
 
       - name: Upload Sub-Models to Github Action Artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: v${{matrix.pds4_version}}_SubMods
           path: ${{ env.DEPLOY_PATH }}
         if: ${{ always() }}
 
       - name: Upload Logs to Github Action Artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: v${{matrix.pds4_version}}_execution_logs
           path: ${{ env.LOGS_PATH }}
@@ -102,12 +106,12 @@ jobs:
     if: ${{ failure() && github.actor != 'pdsen-ci' }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           path: /tmp/artifacts
 
@@ -144,12 +148,12 @@ jobs:
     if: ${{ github.actor != 'pdsen-ci' }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           path: /tmp/artifacts
 
