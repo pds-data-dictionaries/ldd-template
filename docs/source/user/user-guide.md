@@ -18,26 +18,6 @@ use this dictionary? Who is the steward of this dictionary (person and node
 name)? How often is it updated? To whom should questions about it be directed?
 (Give an email address or link to a page with contact information.)*
 
-# How to Include the {name} Local Data Dictionary in a PDS4 Label
-
-*Briefly explain the form that a discipline dictionary
-takes: the input ingest file, the output schema, Schematron, and other files,
-which ones are necessary and which ones may be ignored.*
-
-*Give the URL at PDS where the dictionary files may be downloaded.*
-
-*Give (and explain) a label snippet showing the beginning lines of a 
-label to demonstrate the use of the dictionary schema and schematron
-in the xml prolog and the root tag (preferably Product_Observational).*
-
-*Give (and explain) a label snippet showing the location
-of the classes and attributes in the label; i.e., inside the Discipline_Area
-tag. Collapse the lower level classes if needed for brevity.*
-
-*In general, for label snippets use a fixed-width font and
-consistent indentation. Color-coding is helpful. Label snippets copied from an
-Oxygen editor window will retain their color-coding when pasted here.*
-
 # Organization of Classes and Attributes
 
 *Give a schematic diagram or a list showing the hierarchy of
