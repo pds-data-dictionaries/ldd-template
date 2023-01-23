@@ -138,11 +138,13 @@ The documentation website is managed by GitHub Pages. When changes are made on t
 If you would like to test your changes and generate the site on your own system:
 
 1. Clone the repository
-2. Install Python dependencies (preferable within a Python virtual environment) using this command:
+2. Install Python dependencies (preferably within a Python virtual environment[^1]) using this command:
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 3. Follow steps below
+
+[^1]: [Python Virtual Environment How-To at docs.python.org](https://docs.python.org/3/library/venv.html)
 
 ## To Generate HTML
 
@@ -151,6 +153,12 @@ pip install -r requirements
 cd docs
 make clean html
 ```
+   Note that in Windows environments you will need to run the "clean" and "html" operations as separate invocations of "make":
+```
+cd docs
+make clean
+make html
+````
 
 2. Preview the HTML in your browser
 ```
