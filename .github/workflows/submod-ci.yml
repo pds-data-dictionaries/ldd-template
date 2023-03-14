@@ -8,6 +8,10 @@ on:
        - '**'
        - '!main'
        - '!gh-pages'
+     paths:
+       - src/**
+       - .github/**
+       - pds4_versions.txt
    workflow_dispatch:
 
 env:
