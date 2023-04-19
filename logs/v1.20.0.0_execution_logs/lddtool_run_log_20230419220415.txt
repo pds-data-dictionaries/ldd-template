@@ -1,0 +1,21 @@
+
+>>  FATAL ERROR Configuration file does not exist. [config.properties]
+>>  FATAL ERROR Required data file was not found: /tmp/lddtool-14.2.2/Data/1K00/MDPTNConfigClassDisp.xml
+
+ -- LDDTool Execution Summary --
+     0 warning(s)
+     0 error(s)
+     2 fatal error(s)
+
+Input:
+
+     - IM Version: 1K00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): TBD_LDDToolInputFileName
+
+Output:
+
