@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 14.2.3
+>>  INFO LDDTOOL Version: 14.2.4
 >>  INFO IM Version Id: 1.20.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.26
->>  INFO Date: Thu May 04 00:35:10 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.2.3
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.2.3/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.2.3/lib
+>>  INFO Date: Fri May 12 16:53:51 UTC 2023
+>>  INFO PARENT_DIR: /tmp/lddtool-14.2.4
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.2.4/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.2.4/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Discipline
