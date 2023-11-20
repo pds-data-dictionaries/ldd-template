@@ -1,7 +1,3 @@
-name: Pull request template
-description: Pull request template
-projects: "pds-data-dictionaries/3"
-
 <!--
   Title ^^^^ above ^^^^ should follow good commit message best practices wherever possible.
 
