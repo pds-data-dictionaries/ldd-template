@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
 
       - name: Set up Python 3
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
         
@@ -77,7 +77,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
 
       - name: Set up Python 3
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
