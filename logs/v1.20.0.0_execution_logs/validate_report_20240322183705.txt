@@ -2,21 +2,21 @@
 PDS Validate Tool Report
 
 Configuration:
-   Version                       3.3.0
-   Date                          2023-10-31T15:58:21Z
+   Version                       3.4.1
+   Date                          2024-03-22T18:37:06Z
 
 Parameters:
    Targets                       [file:/home/runner/work/ldd-template/ldd-template/test/test1_FAIL.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-template/ldd-template/build/development/492b352f16d6f61a2ec4f7e780a60dc4287773f2/1.20.0.0/PDS4_EXAMPLE_1K00_1000.xsd, file:/tmp/PDS4_PDS_1K00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-template/ldd-template/build/development/492b352f16d6f61a2ec4f7e780a60dc4287773f2/1.20.0.0/PDS4_EXAMPLE_1K00_1000.sch, file:/tmp/PDS4_PDS_1K00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-template/ldd-template/build/development/5b8db627224418f869d240004aa4b8cdc40c7ef2/1.20.0.0/PDS4_EXAMPLE_1K00_1000.xsd, file:/tmp/PDS4_PDS_1K00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-template/ldd-template/build/development/5b8db627224418f869d240004aa4b8cdc40c7ef2/1.20.0.0/PDS4_EXAMPLE_1K00_1000.sch, file:/tmp/PDS4_PDS_1K00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
    Data Content Validation       off
    Product Level Validation      on
    Max Errors                    100000
-   Registered Contexts File      /tmp/validate-3.3.0/resources/registered_context_products.json
+   Registered Contexts File      /tmp/validate-3.4.1/resources/registered_context_products.json
 
 
 
@@ -50,5 +50,5 @@ Summary:
     1            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 5713 ms
+Completed execution in 3910 ms
 
