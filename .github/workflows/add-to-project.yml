@@ -1,4 +1,4 @@
-name: Add PRs to LDD Project
+name: Issue Management
 on:
   pull_request:
     types: [opened, reopened]
