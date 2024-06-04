@@ -1,8 +1,7 @@
 name: Add PRs to LDD Project
 on:
   pull_request:
-    types:
-      - [opened, reopened]
+    types: [opened, reopened]
 jobs:
   add-to-project:
     name: Add pull request to project
