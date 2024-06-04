@@ -10,5 +10,5 @@ jobs:
       - uses: actions/add-to-project@main
         with:
           project-url: https://github.com/orgs/pds-data-dictionaries/projects/3
-          github-token: ${{ GITHUB_TOKEN }}
+          github-token: ${{ github.token }}
 
