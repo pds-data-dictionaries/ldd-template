@@ -7,7 +7,7 @@ jobs:
     name: Add pull request to project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@v1
+      - uses: actions/add-to-project@v1.0.1
         with:
           project-url: https://github.com/orgs/pds-data-dictionaries/projects/3
           github-token: ${{ secrets.GITHUB_TOKEN }}
