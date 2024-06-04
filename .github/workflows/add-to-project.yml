@@ -11,4 +11,5 @@ jobs:
         with:
           project-url: https://github.com/orgs/pds-data-dictionaries/projects/3
           github-token: ${{ github.token }}
+          labels: github_actions
 
