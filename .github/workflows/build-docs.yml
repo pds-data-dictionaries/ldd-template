@@ -85,6 +85,9 @@ jobs:
         run: |
           # Install Sphinx
           pip install -r docs/requirements.txt
+
+          sudo apt-get update
+          
           # Install dependencies for PDF generation
           sudo apt install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
       - name: Generate PDF
