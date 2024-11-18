@@ -1,21 +1,20 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        14.3.0
+   LDDTool Version        15.2.2
    LDD Version Id:        1.0.0.0
-   LDD Label Version Id:  1.27
+   LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Fri Mar 22 19:05:10 UTC 2024
-   Common Schema          [PDS4_PDS_1L00.xsd]
-   Common Schematron      [PDS4_PDS_1L00.sch]
-   IM Version Id:         1.21.0.0
+   Time                   Mon Nov 18 19:13:24 UTC 2024
+   Common Schema          [PDS4_PDS_1N00.xsd]
+   Common Schematron      [PDS4_PDS_1N00.sch]
+   IM Version Id:         1.23.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.27
+   IM Label Version Id:   1.0
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
-   IM Configuration File  [MDPTNConfigClassDisp.xml]
    IM Glossary            [Glossary.pins]
    IM Document Spec       [DMDocument.pins]
 
@@ -51,7 +50,7 @@ Parsed Input - Header:
 Parsed Input - Attributes:
 
    name                   my_first_attribute
-   version                1.21
+   version                1.23
    value data type        ASCII_Integer
    description            My first attribute 
 
