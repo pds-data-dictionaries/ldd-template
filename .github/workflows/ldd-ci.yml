@@ -84,14 +84,14 @@ jobs:
           ls -R ${{ env.LOGS_PATH }}
 
       - name: Upload LDDs to Github Action Artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: v${{matrix.pds4_version}}_LDDs
           path: ${{ env.DEPLOY_PATH }}
         if: ${{ always() }}
 
       - name: Upload Logs to Github Action Artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: v${{matrix.pds4_version}}_execution_logs
           path: ${{ env.LOGS_PATH }}
@@ -109,7 +109,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           path: /tmp/artifacts
 
@@ -151,7 +151,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           path: /tmp/artifacts
 
