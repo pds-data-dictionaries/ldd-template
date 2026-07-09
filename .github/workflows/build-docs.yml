@@ -108,4 +108,4 @@ jobs:
           git add -A docs/*.pdf
           git status
           git commit --allow-empty -m "Auto-gen PDF by PDSEN CI Bot"
-          git push origin HEAD
+          git push origin ${{ github.ref }}
