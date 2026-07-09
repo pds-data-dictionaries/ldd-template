@@ -108,10 +108,4 @@ jobs:
           git add -A docs/*.pdf
           git status
           git commit --allow-empty -m "Auto-gen PDF by PDSEN CI Bot"
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-          force: true
+          git push origin HEAD
